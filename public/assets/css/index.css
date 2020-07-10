@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "SFDistantGalaxy";
+    src: url("images/SFDistantGalaxy.ttf");
+}
+body {
+    font-family: "SFDistantGalaxy";
+    background-image: url(https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg);
+}
+
+#icon {
+    margin-right: 10px;
+}
+
+#jumbotron {
+    background-image: url(https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#subtext, #title {
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
+
+.viewHead {
+    border-bottom: yellow;
+    border-bottom-style: double;
+}
+.card-header {
+    text-align: left;
+}
+.card {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#apiTable {
+    margin-left: 50px;
+}

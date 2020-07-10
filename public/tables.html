@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillenium Falcon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid header" id="jumbotron">
+        <section class="container">
+          <h1 class="display-4 viewHead" id="title">Grillenium Falcon</h1>
+          <p class="lead" id="subtext">Your Galactic Waiting List</p>
+          <a id="view" class="btn btn-primary btn-lg" href="./index.html" role="button"><i class="fab fa-jedi-order" id="icon"></i>Home</a>
+          <a id="res" class="btn btn-primary btn-lg" href="./reservation.html" role="button"><i class="fas fa-journal-whills" id="icon"></i>Make Reservation</a>
+        </section>
+    </header>
+        <main>
+            <div class="card">
+                <section class="card-header mt-4">Current Empirical Reservations</div>
+                <div class="card-body">
+                    <div class="reservations" id="reservations">
+                    </div>
+                  </blockquote>
+                </section>
+              </div>
+              <div class="card">
+                <section class="card-header mt-4">Intergalactic Wait List</div>
+                <div class="card-body">
+                    <div class="waitlist" id="waitlist">
+                    </div>
+                  </blockquote>
+                </section>
+              </div>
+        </main>
+    </header>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../server.js"></script>
+
+<script type="text/javascript"> 
+function runTableQuery() {
+    $.get("/api/tables", (reserveData) => {
+        console.log(reserveData);
+        for(var i = 0; i < reserveData.length; i++) {
+            // Get a reference to the tableList element and populate it with tables
+            var tableList = $("#reservations");
+
+            // Then display the fields in the HTML (Section Name, Date, URL)
+            var listItem = $("<li class='list-group-item mt-4'>");
+
+            listItem.append(
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<br>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+            );
+    tableList.append(listItem);
+}}
+)};
+
+function runWaitListQuery() {
+// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+$.get("/api/waitlist", (waitData) => {
+// Here we then log the waitlist; Data to console, where it will show up as an object.
+    console.log(waitData);
+    console.log("------------------------------------");
+
+// Loop through and display each of the customers
+for (var i = 0; i < waitData.length; i++) {
+
+// Get a reference to the waitList element and populate it with tables
+var waitList = $("#waitlist");
+
+// Then display the fields in the HTML (Section Name, Date, URL)
+var listItem = $("<li class='list-group-item mt-4'>");
+
+listItem.append(
+  $("<h2>").text("Table #" + (i + 1)),
+  $("<br>"),
+  $("<h2>").text("ID: " + waitData[i].customerID),
+  $("<h2>").text("Name: " + waitData[i].customerName),
+  $("<h2>").text("Email: " + waitData[i].customerEmail),
+  $("<h2>").text("Phone: " + waitData[i].phoneNumber)
+);
+waitList.append(listItem);
+}}
+)};
+
+runTableQuery();
+runWaitListQuery();
+
+</script>
+</html>

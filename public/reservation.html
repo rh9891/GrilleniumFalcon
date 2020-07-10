@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillenium Falcon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid header" id="jumbotron">
+        <div class="container">
+          <h1 class="display-4" id="title">Grillenium Falcon</h1>
+          <p class="lead" id="subtext">Grab Your Table Before The Jawas Do</p>
+          <a id="view" class="btn btn-primary btn-lg" href="./tables.html" role="button"><i class="fab fa-galactic-republic" id="icon"></i>View Tables</a>
+          <a id="res" class="btn btn-primary btn-lg" href="./index.html" role="button"><i class="fab fa-jedi-order" id="icon"></i>Home</a>
+        </div>
+    </header>
+    <div class="card">
+        <div class="card-header">
+          Reservations
+        </div>
+        <div class="card-body">
+                <form>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Unique ID</label>
+                    <input type="number" class="form-control" id="uniqueID">
+                  </div>
+              </form>
+              <button class="btn btn-primary submit" id="submit" type="submit">Submit</button>
+            </div>
+    </div>
+    <a class="apiLink" id="apiTable" href="/api/tables">API Table Link </a>|<a class="apiLink" id="apiWait" href="/api/waitlist"> API Wait List</a>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../server.js"></script>
+<script type="text/javascript"> 
+// The on "click" function builds the object.
+  $("#submit").on("click", (event) => {
+    event.preventDefault();
+    
+    var newReservation = {
+      name: $("#name").val().trim(),
+      phone: $("#phoneNumber").val().trim(),
+      email: $("#email").val().trim(),
+      id: $("#uniqueID").val().trim()
+    };
+    console.log(newReservation);
+    
+
+    // This function is similar to the standard ajax function. The function is given a URL and an object that we want to send, so that we can receive a "callback". The callback is the response of the server. In this case, api routes are set up so that it "returns" true or false depending on if a table is available or not.
+    $.post("/api/tables", newReservation).then(function(data) {
+        console.log(data);
+         // If a table is available, an alert informs the user that the table is booked.
+        if (data) {
+          alert("May the Force be with you. You are officially booked!");
+        }
+
+         // If a table is not available, an alert informs the user that they have been placed on the waiting list.
+         else {
+          alert("Do. Or do not. There is no try. Unfortunately, you are on the waiting list.");
+        }
+
+        // Clears the form when submitting.
+        $("#name").val("");
+        $("#phoneNumber").val("");
+        $("#email").val("");
+        $("#uniqueID").val("");
+
+      });
+    });
+</script>
