@@ -24,6 +24,10 @@ body {
     text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
 
+#container {
+    margin-top: 200px;
+}
+
 .viewHead {
     border-bottom: yellow;
     border-bottom-style: double;
@@ -36,6 +40,14 @@ body {
     margin-left: 50px;
     margin-right: 50px;
 }
+
+.waitListBody, .reservationBody {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 16px;
+}
+
+
 .card-body {
     padding-left: 10px;
     padding-right: 10px;

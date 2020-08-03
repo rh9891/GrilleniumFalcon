@@ -19,7 +19,7 @@
     </header>
         <main>
             <div class="card">
-                <section class="card-header mt-4">Current Empirical Reservations</div>
+                <section class="card-header">Current Empirical Reservations</div>
                 <div class="card-body" class="reservations" id="reservations">
                     <div>
                     </div>
@@ -27,7 +27,7 @@
                 </section>
               </div>
               <div class="card">
-                <section class="card-header mt-4">Intergalactic Wait List</div>
+                <section class="card-header">Intergalactic Wait List</div>
                 <div class="card-body" class="waitlist" id="waitlist">
                     <div>
                     </div>
@@ -52,15 +52,16 @@ function runTableQuery() {
             var tableList = $("#reservations");
 
             // Then display the fields in the HTML (Section Name, Date, URL)
-            var listItem = $("<li class='list-group-item mt-4'>");
+            var listItem = $("<li class='list-group-item'>");
+            listItem.addClass('reservationBody');
 
             listItem.append(
-            $("<h2>").text("Table #" + (i + 1)),
+            $("<h4>").text("Table #" + (i + 1)),
             $("<br>"),
-            $("<h2>").text("ID: " + tableData[i].id),
-            $("<h2>").text("Name: " + tableData[i].name),
-            $("<h2>").text("Email: " + tableData[i].email),
-            $("<h2>").text("Phone: " + tableData[i].phone)
+            $("<h5>").text("ID: " + tableData[i].id),
+            $("<h5>").text("Name: " + tableData[i].name),
+            $("<h5>").text("Email: " + tableData[i].email),
+            $("<h5>").text("Phone: " + tableData[i].phone)
             );
     tableList.append(listItem);
 }}
@@ -78,15 +79,16 @@ function runWaitListQuery() {
       // Get a reference to the waitList element and populate it with tables.
         var waitList = $("#waitlist");
       // Then display the fields in the HTML (Section Name, Date, URL)
-        var listItem = $("<li class='list-group-item mt-4'>");
+        var listItem = $("<li class='list-group-item'>");
+        listItem.addClass('waitListBody');
 
         listItem.append(
-          $("<h2>").text("Table #" + (i + 1)),
+          $("<h4>").text("Table #" + (i + 1)),
           $("<br>"),
-          $("<h2>").text("ID: " + waitData[i].id),
-          $("<h2>").text("Name: " + waitData[i].name),
-          $("<h2>").text("Email: " + waitData[i].email),
-          $("<h2>").text("Phone: " + waitData[i].phone)
+          $("<h5>").text("ID: " + waitData[i].id),
+          $("<h5>").text("Name: " + waitData[i].name),
+          $("<h5>").text("Email: " + waitData[i].email),
+          $("<h5>").text("Phone: " + waitData[i].phone)
       );
       waitList.append(listItem);
   }}
