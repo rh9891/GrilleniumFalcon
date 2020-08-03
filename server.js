@@ -53,6 +53,11 @@ app.get("/api/waitlist", (req, res) => {
     return res.json(waitlist);
 });
 
+app.post('/api/clear', (req, res) => {
+	reservations = [];
+	waitlist = [];
+});
+
 app.listen(PORT, () => {
     // Lets the user know that the port is listening and functioning as expected.
     console.log("Server is running on 2187...Cell 2187, that is. Found in Detention Block AA-23, sub-level five.")    
