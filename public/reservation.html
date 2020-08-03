@@ -43,11 +43,16 @@
               <button class="btn btn-primary submit" id="submit" type="submit">Submit</button>
             </div>
     </div>
-    <a class="apiLink" id="apiTable" href="/api/tables">API Table Link </a>|<a class="apiLink" id="apiWait" href="/api/waitlist"> API Wait List</a>
 </body>
+
+<footer class="footer">
+  <a class="apiLink" id="apiTable" href="/api/tables">API Table Link </a>&nbsp|&nbsp<a class="apiLink" id="apiWait" href="/api/waitlist"> API Wait List </a>&nbsp|&nbsp<a class="apiLink" id="apiClear" href="#"> Clear Tables</a>
+</footer>
+
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../server.js"></script>
+
 <script type="text/javascript"> 
 // The on "click" function builds the object.
   $("#submit").on("click", (event) => {
@@ -59,8 +64,8 @@
       email: $("#email").val().trim(),
       id: $("#uniqueID").val().trim()
     };
-    console.log(newReservation);
     
+    console.log(newReservation);
 
     // This function is similar to the standard ajax function. The function is given a URL and an object that we want to send, so that we can receive a "callback". The callback is the response of the server. In this case, api routes are set up so that it "returns" true or false depending on if a table is available or not.
     $.post("/api/tables", newReservation).then(function(data) {

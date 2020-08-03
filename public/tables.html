@@ -37,6 +37,10 @@
         </main>
     </header>
   </body>
+
+  <footer class="footer">
+    <a class="apiLink" id="apiTable" href="/api/tables">API Table Link </a>&nbsp|&nbsp<a class="apiLink" id="apiWait" href="/api/waitlist"> API Wait List </a>&nbsp|&nbsp<a class="apiLink" id="apiClear" href="#"> Clear Tables</a>
+  </footer>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../server.js" type="text/javascript"></script>
@@ -93,6 +97,19 @@ function runWaitListQuery() {
       waitList.append(listItem);
   }}
 )};
+
+// This function resets all of the data in our tables. This is intended to restart the demo.
+function clearTable() {
+    alert("Clear your mind must be, if you are to find the villains behind this plot. Your tables are clearing.");
+
+    // Clear the tables on the server and then empty the elements on the client
+    $.ajax({ url: "/api/clear", method: "POST" }).then(function() {
+      $("#waitlist").empty();
+      $("#reservations").empty();
+    });
+  }
+
+  $("#apiClear").on("click", clearTable);
 
 runTableQuery();
 runWaitListQuery();

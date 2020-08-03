@@ -41,7 +41,7 @@ app.get("/api/tables", (req, res) => {
 app.post("/api/tables", (req, res) => {
     var newReservation = req.body;
 
-    if(reservations.length >= 5)    {
+    if(reservations.length >= 5) {
         waitlist.push(newReservation);
     } else  {
         reservations.push(newReservation);
