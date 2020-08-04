@@ -17,17 +17,9 @@
 
 ## Description
 
-Home Page gives the user the opportunity to Make Reservation, see current reservations as well as the waiting list
-Clicking on Make Reservation will provide a form in bootstrap that the user can complete.
-If there are less than 5 current table reservations, then that reservation is added to the reservation list.
-If there are more than 5 current table reservations, then that reservation is added to the waitlist.
-The user can click on View Tables to see the current list of reservations and waitlists.
-At the bottom of the app, there are three links.
-First link is to Clear Table which will empty out the arrays and basically reset the reservation list.
-The second link is to the API Table Link which shows the raw data objects for the table array.
-The third link is to the API Wait List which shows the raw data objects for the Waitlist Array.Welcome to the Grillenium Falcon, Overall purpose is to help schedule reservation requests. Restaurant has just 5 tables available. First five requests get a reservation, every request after that is sent to the waiting list.
+Welcome to the Grillenium Falcon, where the company (and food!) is better than any wretched hive of scum and villainy you'll find at the Mos Eisley spaceport. Unfortunately, because of our positively, raving reviews, you'll have to make a reservation request in order to be seated. Using the Grillenium Falcon restaurant-reservation application, you have the opportunity to make a reservation request or see current reservations (as well as take a peek at the waiting list to see how long your wait may be). If you choose to make a reservation to be seated at our fine establishment (which we promise you won't regret!), you will be provided a reservation form that you must fill out.
 
-The Grillenium Falcon is a full-stack application that was built using Node, Express (to handle the routing), and jQuery.
+The Grillenium Falcon is a full-stack application that was built using Node, Express (to handle the routing), AJAX (to send and receive information from the server), and jQuery.
 
 ## Contributors
 
