@@ -17,9 +17,11 @@
 
 ## Description
 
-Welcome to the Grillenium Falcon, where the company (and food!) is better than any wretched hive of scum and villainy you'll find at the Mos Eisley spaceport. Unfortunately, because of our positively, raving reviews, you'll have to make a reservation request in order to be seated. Using the Grillenium Falcon restaurant-reservation application, you have the opportunity to make a reservation request or see current reservations (as well as take a peek at the waiting list to see how long your wait may be). If you choose to make a reservation to be seated at our fine establishment (which we promise you won't regret!), you will be provided a reservation form that you must fill out.
+Welcome to the Grillenium Falcon, where the company (and food!) is better than any wretched hive of scum and villainy you'll find at the Mos Eisley spaceport. Unfortunately, because of our positively, raving reviews, you'll have to make a reservation request in order to be seated.  
 
-The Grillenium Falcon is a full-stack application that was built using Node, Express (to handle the routing), AJAX (to send and receive information from the server), and jQuery.
+Using the Grillenium Falcon restaurant-reservation application, you have the opportunity to make a reservation request or see current reservations (as well as take a peek at the waiting list to see how long your wait may be). If you choose to make a reservation to be seated at our fine establishment (which we promise you won't regret!), you will be provided a reservation form that you must fill out.  
+
+The Grillenium Falcon is a full-stack application that was built using Node, Express (to handle the routing), AJAX (to send and receive information from the server), and jQuery.  
 
 ## Contributors
 
