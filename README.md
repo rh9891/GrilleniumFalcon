@@ -65,9 +65,9 @@ THEN they will be directed to view a list of the patrons that have reservations 
 
 The following animation demonstrates the application functionality:
 
-![Grillenium Falcon Preview]()
+![Grillenium Falcon Preview](https://github.com/rh9891/GrilleniumFalcon/blob/master/public/assets/css/images/grilleniumFalconPreview.gif)
 
-To download the above video file of the application functionality, you may do so [here]().
+To download the above video file of the application functionality, you may do so [here](https://github.com/rh9891/GrilleniumFalcon/blob/master/public/assets/css/images/grilleniumFalconPreview.mp4).
 
 ## Links
 
