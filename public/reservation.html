@@ -68,9 +68,8 @@
     console.log(newReservation);
 
     // This function is similar to the standard ajax function. The function is given a URL and an object that we want to send, so that we can receive a "callback". The callback is the response of the server. In this case, api routes are set up so that it "returns" true or false depending on if a table is available or not.
-    $.post("/api/tables", newReservation).then(function(data) {
-        console.log(data);
-         // If a table is available, an alert informs the user that the table is booked.
+    $.post("/api/tables", newReservation, function(data) {
+        // If a table is available, an alert informs the user that the table is booked.
         if (data) {
           alert("May the Force be with you. You are officially booked!");
         }

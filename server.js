@@ -15,48 +15,10 @@ const PORT = process.env.PORT || 2187;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const reservations = [];
-const waitlist = [];
-
-// HTML Routes
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/index.html"));
-});
-
-app.get("/tables", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/tables.html"))
-});
-
-app.get("/reserve", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/reservation.html"))
-});
-
-// API Routes
-app.get("/api/tables", (req, res) => {
-    return res.json(reservations);
-});
-
-app.post("/api/tables", (req, res) => {
-    var newReservation = req.body;
-
-    if(reservations.length >= 5) {
-        waitlist.push(newReservation);
-    } else  {
-        reservations.push(newReservation);
-    }
-    res.json(newReservation);
-});
-
-app.get("/api/waitlist", (req, res) => {
-    return res.json(waitlist);
-});
-
-app.post('/api/clear', (req, res) => {
-	reservations = [];
-	waitlist = [];
-});
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, () => {
     // Lets the user know that the port is listening and functioning as expected.
