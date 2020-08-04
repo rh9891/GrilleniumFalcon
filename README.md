@@ -41,21 +41,33 @@ The Grillenium Falcon is a full-stack application that was built using Node, Exp
 
 ## User Story
 ~~~
-  
+AS A restaurant-goer  
+I WANT to make a reservation request  
+SO THAT I can have an available table or be placed on a waiting list.  
 ~~~
 
 ## Features of the Application
 ~~~
-  
+GIVEN a user that is using a restaurant-reservation application  
+WHEN the user clicks on the button to make a reservation request  
+THEN they will be directed to fill out a reservation form.  
+
+WHEN the user inputs their personal information into the reservation form  
+THEN they will have reserved a table or be placed on the waitlist.  
+
+WHEN the user clicks on the button to view tables
+THEN they will be directed to view a list of the patrons that have reservations and those that have been placed on the waitlist.  
 ~~~
 
 ## Preview of the Grillenium Falcon
 
-![Grillenium Falcon Homepage]()
+![Grillenium Falcon Homepage](public/assets/css/images/grilleniumFalconHomepage.png)
 
-The following animation demonstrates the complete application functionality:
+The following animation demonstrates the application functionality:
 
 ![Grillenium Falcon Preview]()
+
+To download the above video file of the application functionality, you may do so [here]().
 
 ## Links
 
